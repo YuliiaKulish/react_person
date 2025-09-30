@@ -7,7 +7,13 @@ export const Person = ({ person }) => {
   let partnerText = '';
 
   if (isMarried) {
-    const partnerRole = sex === 'm' ? 'wife' : 'husband';
+    let partnerRole = '';
+
+    if (sex === 'm') {
+      partnerRole = 'wife';
+    } else {
+      partnerRole = 'husband';
+    }
 
     partnerText = `${partnerName} is my ${partnerRole}`;
   } else {
